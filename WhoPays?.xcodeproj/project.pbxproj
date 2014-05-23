@@ -1,0 +1,480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52B78455192FCB2C0013545F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B78454192FCB2C0013545F /* Foundation.framework */; };
+		52B78457192FCB2C0013545F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B78456192FCB2C0013545F /* CoreGraphics.framework */; };
+		52B78459192FCB2C0013545F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B78458192FCB2C0013545F /* UIKit.framework */; };
+		52B7845B192FCB2C0013545F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B7845A192FCB2C0013545F /* CoreData.framework */; };
+		52B78461192FCB2C0013545F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52B7845F192FCB2C0013545F /* InfoPlist.strings */; };
+		52B78463192FCB2C0013545F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B78462192FCB2C0013545F /* main.m */; };
+		52B78467192FCB2C0013545F /* WPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B78466192FCB2C0013545F /* WPAppDelegate.m */; };
+		52B7846A192FCB2C0013545F /* WhoPays_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52B78468192FCB2C0013545F /* WhoPays_.xcdatamodeld */; };
+		52B7846C192FCB2C0013545F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B7846B192FCB2C0013545F /* Images.xcassets */; };
+		52B78473192FCB2C0013545F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B78472192FCB2C0013545F /* XCTest.framework */; };
+		52B78474192FCB2C0013545F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B78454192FCB2C0013545F /* Foundation.framework */; };
+		52B78475192FCB2C0013545F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B78458192FCB2C0013545F /* UIKit.framework */; };
+		52B78476192FCB2C0013545F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B7845A192FCB2C0013545F /* CoreData.framework */; };
+		52B7847E192FCB2C0013545F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52B7847C192FCB2C0013545F /* InfoPlist.strings */; };
+		52B78480192FCB2C0013545F /* WhoPays_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B7847F192FCB2C0013545F /* WhoPays_Tests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52B78477192FCB2C0013545F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52B78449192FCB2C0013545F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B78450192FCB2C0013545F;
+			remoteInfo = "WhoPays?";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		52B78451192FCB2C0013545F /* WhoPays?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WhoPays?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52B78454192FCB2C0013545F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		52B78456192FCB2C0013545F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		52B78458192FCB2C0013545F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		52B7845A192FCB2C0013545F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		52B7845E192FCB2C0013545F /* WhoPays?-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WhoPays?-Info.plist"; sourceTree = "<group>"; };
+		52B78460192FCB2C0013545F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		52B78462192FCB2C0013545F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		52B78464192FCB2C0013545F /* WhoPays?-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WhoPays?-Prefix.pch"; sourceTree = "<group>"; };
+		52B78465192FCB2C0013545F /* WPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPAppDelegate.h; sourceTree = "<group>"; };
+		52B78466192FCB2C0013545F /* WPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPAppDelegate.m; sourceTree = "<group>"; };
+		52B78469192FCB2C0013545F /* WhoPays_.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WhoPays_.xcdatamodel; sourceTree = "<group>"; };
+		52B7846B192FCB2C0013545F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		52B78471192FCB2C0013545F /* WhoPays?Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WhoPays?Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52B78472192FCB2C0013545F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		52B7847B192FCB2C0013545F /* WhoPays?Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WhoPays?Tests-Info.plist"; sourceTree = "<group>"; };
+		52B7847D192FCB2C0013545F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		52B7847F192FCB2C0013545F /* WhoPays_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhoPays_Tests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52B7844E192FCB2C0013545F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B78457192FCB2C0013545F /* CoreGraphics.framework in Frameworks */,
+				52B7845B192FCB2C0013545F /* CoreData.framework in Frameworks */,
+				52B78459192FCB2C0013545F /* UIKit.framework in Frameworks */,
+				52B78455192FCB2C0013545F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B7846E192FCB2C0013545F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B78473192FCB2C0013545F /* XCTest.framework in Frameworks */,
+				52B78476192FCB2C0013545F /* CoreData.framework in Frameworks */,
+				52B78475192FCB2C0013545F /* UIKit.framework in Frameworks */,
+				52B78474192FCB2C0013545F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52B78448192FCB2C0013545F = {
+			isa = PBXGroup;
+			children = (
+				52B7845C192FCB2C0013545F /* WhoPays? */,
+				52B78479192FCB2C0013545F /* WhoPays?Tests */,
+				52B78453192FCB2C0013545F /* Frameworks */,
+				52B78452192FCB2C0013545F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		52B78452192FCB2C0013545F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52B78451192FCB2C0013545F /* WhoPays?.app */,
+				52B78471192FCB2C0013545F /* WhoPays?Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52B78453192FCB2C0013545F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				52B78454192FCB2C0013545F /* Foundation.framework */,
+				52B78456192FCB2C0013545F /* CoreGraphics.framework */,
+				52B78458192FCB2C0013545F /* UIKit.framework */,
+				52B7845A192FCB2C0013545F /* CoreData.framework */,
+				52B78472192FCB2C0013545F /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52B7845C192FCB2C0013545F /* WhoPays? */ = {
+			isa = PBXGroup;
+			children = (
+				52B78465192FCB2C0013545F /* WPAppDelegate.h */,
+				52B78466192FCB2C0013545F /* WPAppDelegate.m */,
+				52B7846B192FCB2C0013545F /* Images.xcassets */,
+				52B78468192FCB2C0013545F /* WhoPays_.xcdatamodeld */,
+				52B7845D192FCB2C0013545F /* Supporting Files */,
+			);
+			path = "WhoPays?";
+			sourceTree = "<group>";
+		};
+		52B7845D192FCB2C0013545F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				52B7845E192FCB2C0013545F /* WhoPays?-Info.plist */,
+				52B7845F192FCB2C0013545F /* InfoPlist.strings */,
+				52B78462192FCB2C0013545F /* main.m */,
+				52B78464192FCB2C0013545F /* WhoPays?-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52B78479192FCB2C0013545F /* WhoPays?Tests */ = {
+			isa = PBXGroup;
+			children = (
+				52B7847F192FCB2C0013545F /* WhoPays_Tests.m */,
+				52B7847A192FCB2C0013545F /* Supporting Files */,
+			);
+			path = "WhoPays?Tests";
+			sourceTree = "<group>";
+		};
+		52B7847A192FCB2C0013545F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				52B7847B192FCB2C0013545F /* WhoPays?Tests-Info.plist */,
+				52B7847C192FCB2C0013545F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52B78450192FCB2C0013545F /* WhoPays? */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52B78483192FCB2C0013545F /* Build configuration list for PBXNativeTarget "WhoPays?" */;
+			buildPhases = (
+				52B7844D192FCB2C0013545F /* Sources */,
+				52B7844E192FCB2C0013545F /* Frameworks */,
+				52B7844F192FCB2C0013545F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WhoPays?";
+			productName = "WhoPays?";
+			productReference = 52B78451192FCB2C0013545F /* WhoPays?.app */;
+			productType = "com.apple.product-type.application";
+		};
+		52B78470192FCB2C0013545F /* WhoPays?Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52B78486192FCB2C0013545F /* Build configuration list for PBXNativeTarget "WhoPays?Tests" */;
+			buildPhases = (
+				52B7846D192FCB2C0013545F /* Sources */,
+				52B7846E192FCB2C0013545F /* Frameworks */,
+				52B7846F192FCB2C0013545F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52B78478192FCB2C0013545F /* PBXTargetDependency */,
+			);
+			name = "WhoPays?Tests";
+			productName = "WhoPays?Tests";
+			productReference = 52B78471192FCB2C0013545F /* WhoPays?Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52B78449192FCB2C0013545F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = WP;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Malcolm Crum";
+				TargetAttributes = {
+					52B78470192FCB2C0013545F = {
+						TestTargetID = 52B78450192FCB2C0013545F;
+					};
+				};
+			};
+			buildConfigurationList = 52B7844C192FCB2C0013545F /* Build configuration list for PBXProject "WhoPays?" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 52B78448192FCB2C0013545F;
+			productRefGroup = 52B78452192FCB2C0013545F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52B78450192FCB2C0013545F /* WhoPays? */,
+				52B78470192FCB2C0013545F /* WhoPays?Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52B7844F192FCB2C0013545F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B78461192FCB2C0013545F /* InfoPlist.strings in Resources */,
+				52B7846C192FCB2C0013545F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B7846F192FCB2C0013545F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B7847E192FCB2C0013545F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52B7844D192FCB2C0013545F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B78463192FCB2C0013545F /* main.m in Sources */,
+				52B7846A192FCB2C0013545F /* WhoPays_.xcdatamodeld in Sources */,
+				52B78467192FCB2C0013545F /* WPAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B7846D192FCB2C0013545F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B78480192FCB2C0013545F /* WhoPays_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52B78478192FCB2C0013545F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52B78450192FCB2C0013545F /* WhoPays? */;
+			targetProxy = 52B78477192FCB2C0013545F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		52B7845F192FCB2C0013545F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52B78460192FCB2C0013545F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		52B7847C192FCB2C0013545F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52B7847D192FCB2C0013545F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52B78481192FCB2C0013545F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		52B78482192FCB2C0013545F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52B78484192FCB2C0013545F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WhoPays?/WhoPays?-Prefix.pch";
+				INFOPLIST_FILE = "WhoPays?/WhoPays?-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		52B78485192FCB2C0013545F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WhoPays?/WhoPays?-Prefix.pch";
+				INFOPLIST_FILE = "WhoPays?/WhoPays?-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		52B78487192FCB2C0013545F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WhoPays?.app/WhoPays?";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WhoPays?/WhoPays?-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "WhoPays?Tests/WhoPays?Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		52B78488192FCB2C0013545F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WhoPays?.app/WhoPays?";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WhoPays?/WhoPays?-Prefix.pch";
+				INFOPLIST_FILE = "WhoPays?Tests/WhoPays?Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52B7844C192FCB2C0013545F /* Build configuration list for PBXProject "WhoPays?" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52B78481192FCB2C0013545F /* Debug */,
+				52B78482192FCB2C0013545F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52B78483192FCB2C0013545F /* Build configuration list for PBXNativeTarget "WhoPays?" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52B78484192FCB2C0013545F /* Debug */,
+				52B78485192FCB2C0013545F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		52B78486192FCB2C0013545F /* Build configuration list for PBXNativeTarget "WhoPays?Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52B78487192FCB2C0013545F /* Debug */,
+				52B78488192FCB2C0013545F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		52B78468192FCB2C0013545F /* WhoPays_.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				52B78469192FCB2C0013545F /* WhoPays_.xcdatamodel */,
+			);
+			currentVersion = 52B78469192FCB2C0013545F /* WhoPays_.xcdatamodel */;
+			path = WhoPays_.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 52B78449192FCB2C0013545F /* Project object */;
+}
