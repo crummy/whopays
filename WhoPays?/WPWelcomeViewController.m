@@ -113,9 +113,8 @@
                                                                       realm:nil
                                                           signatureProvider:nil];
     OARequestParameter *token = [[OARequestParameter alloc] initWithName:@"oauth_token" value:self.accessToken.key];
-    OARequestParameter *verifier = [[OARequestParameter alloc] initWithName:@"oauth_secret" value:pin];
+    OARequestParameter *verifier = [[OARequestParameter alloc] initWithName:@"oauth_verifier" value:pin];
     [request setParameters:@[token, verifier]];
-    [request setHTTPMethod:@"POST"];
     OADataFetcher *fetcher = [[OADataFetcher alloc] init];
     [fetcher fetchDataWithRequest:request
                          delegate:self
