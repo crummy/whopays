@@ -16,9 +16,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"WhoPays" bundle:[NSBundle mainBundle]];
+    UIViewController *viewController = [storyboard instantiateInitialViewController];
+    self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
