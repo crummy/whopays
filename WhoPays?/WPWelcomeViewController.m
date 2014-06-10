@@ -112,9 +112,11 @@
                                                                       token:self.accessToken
                                                                       realm:nil
                                                           signatureProvider:nil];
-    OARequestParameter *token = [[OARequestParameter alloc] initWithName:@"oauth_token" value:self.accessToken.key];
-    OARequestParameter *verifier = [[OARequestParameter alloc] initWithName:@"oauth_verifier" value:pin];
-    [request setParameters:@[token, verifier]];
+    //OARequestParameter *token = [[OARequestParameter alloc] initWithName:@"oauth_token" value:self.accessToken.key];
+    //OARequestParameter *verifier = [[OARequestParameter alloc] initWithName:@"oauth_verifier" value:pin];
+    //[request setParameters:@[token, verifier]];
+    [request setValue:@"oauth_token" forHTTPHeaderField:self.accessToken.key];
+    [request setValue:@"oauth_verifier" forHTTPHeaderField:pin];
     OADataFetcher *fetcher = [[OADataFetcher alloc] init];
     [fetcher fetchDataWithRequest:request
                          delegate:self
@@ -158,7 +160,7 @@
         [self.accessToken storeInUserDefaultsWithServiceProviderName:@"WhoPays" prefix:@"WP"];
         [self testAPIConnection];
     } else {
-        NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+        NSLog(@"accessTokenTicket returned with failure!");
     }
 }
 
