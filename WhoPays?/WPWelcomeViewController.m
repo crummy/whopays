@@ -115,8 +115,8 @@
     //OARequestParameter *token = [[OARequestParameter alloc] initWithName:@"oauth_token" value:self.accessToken.key];
     //OARequestParameter *verifier = [[OARequestParameter alloc] initWithName:@"oauth_verifier" value:pin];
     //[request setParameters:@[token, verifier]];
-    [request setValue:self.accessToken.key forHTTPHeaderField:@"oauth_token"];
-    [request setValue:pin forHTTPHeaderField:@"oauth_verifier"];
+    //[request setValue:[NSString stringWithFormat:Token %@", self.accessToken.key] forHTTPHeaderField:@"Authorization"];
+    //[request setValue:[NSString stringWithFormat:@"Authorization: Key %@", pin] forHTTPHeaderField:@"oauth_verifier"];
     OADataFetcher *fetcher = [[OADataFetcher alloc] init];
     [fetcher fetchDataWithRequest:request
                          delegate:self
@@ -172,6 +172,7 @@
 
 -(void)loginSucceeded:(NSString *)accessToken {
     self.tokenLabel.text = accessToken;
+    self.accessToken.verifier = accessToken;
     [self getAuthorizedAccessToken:accessToken];
 }
 
