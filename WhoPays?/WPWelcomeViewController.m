@@ -105,18 +105,14 @@
     NSLog(@"Sent anonymous OAuth request");
 }
 
-- (void)getAuthorizedAccessToken:(NSString *)pin {
+- (void)getAuthorizedAccessToken {
     NSURL *url = [NSURL URLWithString:@"https://secure.splitwise.com/api/v3.0/get_access_token"];
     OAMutableURLRequest *request = [[OAMutableURLRequest alloc] initWithURL:url
                                                                    consumer:self.consumer
                                                                       token:self.accessToken
                                                                       realm:nil
                                                           signatureProvider:nil];
-    //OARequestParameter *token = [[OARequestParameter alloc] initWithName:@"oauth_token" value:self.accessToken.key];
-    //OARequestParameter *verifier = [[OARequestParameter alloc] initWithName:@"oauth_verifier" value:pin];
-    //[request setParameters:@[token, verifier]];
-    //[request setValue:[NSString stringWithFormat:Token %@", self.accessToken.key] forHTTPHeaderField:@"Authorization"];
-    //[request setValue:[NSString stringWithFormat:@"Authorization: Key %@", pin] forHTTPHeaderField:@"oauth_verifier"];
+    [request setHTTPMethod:@"POST"];
     OADataFetcher *fetcher = [[OADataFetcher alloc] init];
     [fetcher fetchDataWithRequest:request
                          delegate:self
@@ -139,7 +135,6 @@
                                                                signatureProvider:nil];
         OARequestParameter *param = [[OARequestParameter alloc] initWithName:@"oauth_token" value:self.accessToken.key];
         [request setParameters:@[param]];
-        
         WPLoginViewController *loginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Login"];
         loginViewController.delegate = self;
         loginViewController.webView = [[UIWebView alloc] init];
@@ -173,7 +168,7 @@
 -(void)loginSucceeded:(NSString *)accessToken {
     self.tokenLabel.text = accessToken;
     self.accessToken.verifier = accessToken;
-    [self getAuthorizedAccessToken:accessToken];
+    [self getAuthorizedAccessToken];
 }
 
 @end

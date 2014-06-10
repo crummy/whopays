@@ -121,7 +121,6 @@ signatureProvider:(id<OASignatureProviding>)aProvider
 	[chunks	addObject:@"oauth_version=\"1.0\""];
 	
 	NSString *oauthHeader = [NSString stringWithFormat:@"OAuth %@", [chunks componentsJoinedByString:@", "]];
-    NSLog(@"-------\n%@\n------", [NSString stringWithFormat:@"OAuth %@", [chunks componentsJoinedByString:@", "]]);
 	[chunks release];
 
     [self setValue:oauthHeader forHTTPHeaderField:@"Authorization"];
