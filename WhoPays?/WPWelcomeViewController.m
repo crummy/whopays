@@ -115,8 +115,8 @@
     //OARequestParameter *token = [[OARequestParameter alloc] initWithName:@"oauth_token" value:self.accessToken.key];
     //OARequestParameter *verifier = [[OARequestParameter alloc] initWithName:@"oauth_verifier" value:pin];
     //[request setParameters:@[token, verifier]];
-    [request setValue:@"oauth_token" forHTTPHeaderField:self.accessToken.key];
-    [request setValue:@"oauth_verifier" forHTTPHeaderField:pin];
+    [request setValue:self.accessToken.key forHTTPHeaderField:@"oauth_token"];
+    [request setValue:pin forHTTPHeaderField:@"oauth_verifier"];
     OADataFetcher *fetcher = [[OADataFetcher alloc] init];
     [fetcher fetchDataWithRequest:request
                          delegate:self
