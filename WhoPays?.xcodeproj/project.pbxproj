@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		526F3F6319301077008305FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B78462192FCB2C0013545F /* main.m */; };
 		526F3F64193010C8008305FF /* WPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B784B01930056B0013545F /* WPLoginViewController.m */; };
+		52A92E4A1948F06900E6C87F /* WPMembersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A92E491948F06900E6C87F /* WPMembersViewController.m */; };
 		52B78455192FCB2C0013545F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B78454192FCB2C0013545F /* Foundation.framework */; };
 		52B78457192FCB2C0013545F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B78456192FCB2C0013545F /* CoreGraphics.framework */; };
 		52B78459192FCB2C0013545F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B78458192FCB2C0013545F /* UIKit.framework */; };
@@ -45,6 +46,7 @@
 		52B784EE19300E100013545F /* OAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B784D819300E100013545F /* OAToken.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		52B784EF19300E100013545F /* OATokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B784DA19300E100013545F /* OATokenManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		52B784F019300E100013545F /* README in Resources */ = {isa = PBXBuildFile; fileRef = 52B784DC19300E100013545F /* README */; };
+		52D19C401947CAB400AB2964 /* WPGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D19C3F1947CAB400AB2964 /* WPGroupsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		52A92E481948F06900E6C87F /* WPMembersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPMembersViewController.h; sourceTree = "<group>"; };
+		52A92E491948F06900E6C87F /* WPMembersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPMembersViewController.m; sourceTree = "<group>"; };
 		52B78451192FCB2C0013545F /* WhoPays?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WhoPays?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B78454192FCB2C0013545F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		52B78456192FCB2C0013545F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -121,6 +125,8 @@
 		52B784DA19300E100013545F /* OATokenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OATokenManager.m; sourceTree = "<group>"; };
 		52B784DB19300E100013545F /* OAuthConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthConsumer.h; sourceTree = "<group>"; };
 		52B784DC19300E100013545F /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		52D19C3E1947CAB400AB2964 /* WPGroupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPGroupsViewController.h; sourceTree = "<group>"; };
+		52D19C3F1947CAB400AB2964 /* WPGroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPGroupsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +200,10 @@
 				52B7848C192FCD3A0013545F /* WPWelcomeViewController.m */,
 				52B784AF1930056B0013545F /* WPLoginViewController.h */,
 				52B784B01930056B0013545F /* WPLoginViewController.m */,
+				52D19C3E1947CAB400AB2964 /* WPGroupsViewController.h */,
+				52D19C3F1947CAB400AB2964 /* WPGroupsViewController.m */,
+				52A92E481948F06900E6C87F /* WPMembersViewController.h */,
+				52A92E491948F06900E6C87F /* WPMembersViewController.m */,
 			);
 			path = "WhoPays?";
 			sourceTree = "<group>";
@@ -393,6 +403,7 @@
 				52B7848D192FCD3A0013545F /* WPWelcomeViewController.m in Sources */,
 				526F3F64193010C8008305FF /* WPLoginViewController.m in Sources */,
 				52B78467192FCB2C0013545F /* WPAppDelegate.m in Sources */,
+				52A92E4A1948F06900E6C87F /* WPMembersViewController.m in Sources */,
 				52B7846A192FCB2C0013545F /* WhoPays_.xcdatamodeld in Sources */,
 				52B784E119300E100013545F /* hmac.c in Sources */,
 				52B784DF19300E100013545F /* NSURL+Base.m in Sources */,
@@ -406,6 +417,7 @@
 				52B784DD19300E100013545F /* NSMutableURLRequest+Parameters.m in Sources */,
 				52B784EC19300E100013545F /* OAServiceTicket.m in Sources */,
 				52B784E619300E100013545F /* OADataFetcher.m in Sources */,
+				52D19C401947CAB400AB2964 /* WPGroupsViewController.m in Sources */,
 				52B784EA19300E100013545F /* OAProblem.m in Sources */,
 				52B784E519300E100013545F /* OAConsumer.m in Sources */,
 				52B784E719300E100013545F /* OAHMAC_SHA1SignatureProvider.m in Sources */,

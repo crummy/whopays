@@ -45,7 +45,7 @@
         NSString *accessToken = [[urlString componentsSeparatedByString:@"="] lastObject];
         NSLog(@"access token: %@", accessToken);
         [self.delegate loginSucceeded:accessToken];
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissViewControllerAnimated:NO completion:nil];
     }
 }
 

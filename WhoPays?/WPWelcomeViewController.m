@@ -8,6 +8,7 @@
 
 #import "WPWelcomeViewController.h"
 #import "WPLoginViewController.h"
+#import "WPGroupsViewController.h"
 #import "OAuthConsumer.h"
 
 @interface WPWelcomeViewController ()
@@ -15,8 +16,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *signInButton;
 @property (strong, nonatomic) OAConsumer *consumer;
 @property (strong, nonatomic) OAToken *accessToken;
-@property (strong, nonatomic) IBOutlet UILabel *tokenLabel;
-- (IBAction)getUnauthorizedRequestTokenButtonPressed:(UIButton *)sender;
+- (IBAction)signInButtonPressed:(UIButton *)sender;
 
 @end
 
@@ -44,20 +44,16 @@
 }
 
 - (IBAction)signInButtonPressed:(UIButton *)sender {
-    NSLog(@"Sign In button pressed");
-    NSURL *url = [NSURL URLWithString:@"https://secure.splitwise.com"];
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-    WPLoginViewController *loginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Login"];
-    loginViewController.webView = [[UIWebView alloc] init];
-    [loginViewController.webView loadRequest:urlRequest];
-    [self presentViewController:loginViewController animated:YES completion:nil];
+    self.accessToken = [[OAToken alloc] initWithUserDefaultsUsingServiceProviderName:@"WhoPays" prefix:@"WP"];
+    if (!self.accessToken) {
+        [self getUnauthorizedRequestToken];
+    } else {
+        [self performSegueWithIdentifier:@"toGroupsSegue" sender:self];
+    }
 }
 
-- (IBAction)getUnauthorizedRequestTokenButtonPressed:(UIButton *)sender {
-    [self getUnauthorizedRequestToken];
-}
 
-- (void)testAPIConnection {
+/*- (void)testAPIConnection {
     NSURL *testURL = [NSURL URLWithString:@"https://secure.splitwise.com/api/v3.0/test"];
     OAMutableURLRequest *request = [[OAMutableURLRequest alloc] initWithURL:testURL
                                                                    consumer:self.consumer
@@ -73,12 +69,12 @@
 }
 
 - (void)testTicket:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data {
-    NSLog(@"%@", data);
+    NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
 }
 
 - (void)testTicket:(OAServiceTicket *)ticket didFailWithError:(NSError *)error {
     NSLog(@"test error: %@", error);
-}
+}*/
 
 #pragma mark - oauth classes
 
@@ -153,7 +149,7 @@
         NSString *responseBody = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         self.accessToken = [[OAToken alloc] initWithHTTPResponseBody:responseBody];
         [self.accessToken storeInUserDefaultsWithServiceProviderName:@"WhoPays" prefix:@"WP"];
-        [self testAPIConnection];
+        [self performSegueWithIdentifier:@"toGroupsSegue" sender:self];
     } else {
         NSLog(@"accessTokenTicket returned with failure!");
     }
@@ -166,7 +162,6 @@
 #pragma mark - WPLoginViewController delegate
 
 -(void)loginSucceeded:(NSString *)accessToken {
-    self.tokenLabel.text = accessToken;
     self.accessToken.verifier = accessToken;
     [self getAuthorizedAccessToken];
 }
