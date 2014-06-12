@@ -35,7 +35,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    [self setTitle:@"Loading..."];
     [self getGroupsFromSplitwise];
 }
 
@@ -56,8 +56,11 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if (self.groups) return [self.groups count];
-    else return 0;
+    if (self.groups) {
+        return [self.groups count] - 1;  // minus one to subtract the "transactions in no group" item
+    } else {
+        return 0;
+    }
 }
 
 
@@ -65,12 +68,12 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Group Cell" forIndexPath:indexPath];
 
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.groups[indexPath.row] objectForKey:@"name"]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.groups[indexPath.row+1] objectForKey:@"name"]]; // plus one to skip over "transactions in no group" item
     
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:@"toMembersSegue" sender:self];
 }
 
@@ -144,20 +147,16 @@
 
 - (void)getGroups:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data {
     NSError *jsonError = nil;
-    //NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
     NSJSONSerialization *jsonObj = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
     if (jsonError != nil) {
         NSLog(@"JSON Error: %@", jsonError);
         return;
     }
-    NSLog(@"jsonObj class is: %@", [jsonObj class]);
     NSDictionary *jsonDict = (NSDictionary *)jsonObj;
-    for (id key in jsonDict) {
-        id value = [jsonDict valueForKey:key];
-        NSLog(@"%@: %@", [key class], [value class]);
-    }
+
     self.groups = [jsonDict objectForKey:@"groups"];
     [self.tableView reloadData];
+    [self setTitle:@"Groups"];
 }
 
 - (void)getGroups:(OAServiceTicket *)ticket didFailWithError:(NSError *)error {

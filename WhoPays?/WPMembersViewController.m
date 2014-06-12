@@ -10,6 +10,8 @@
 
 @interface WPMembersViewController ()
 
+@property (strong, nonatomic) NSMutableDictionary *selectedMembers;
+
 @end
 
 @implementation WPMembersViewController
@@ -32,12 +34,39 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self setTitle:@"Select who is present"];
+    self.selectedMembers = [@{} mutableCopy];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)calculateWhoOwes {
+    if ([self.selectedMembers count] == 0) {
+        [self setTitle:@"Select who is present"];
+        return;
+    }
+    NSString *whoPays = @"";
+    float worstDebt = -FLT_MAX;
+    for (NSNumber *memberIndex in self.selectedMembers) {
+        NSDictionary *member = self.group[@"members"][[memberIndex intValue]];
+        float totalOwed = 0;
+        for (NSDictionary *debt in self.group[@"original_debts"]) {
+            if ([debt[@"from"] intValue] == [member[@"id"] intValue]) {
+                totalOwed += [debt[@"amount"] floatValue];
+            } else if ([debt[@"to"] intValue] == [member[@"id"] intValue]) {
+                totalOwed -= [debt[@"amount"] floatValue];
+            }
+        }
+        if (totalOwed > worstDebt) {
+            worstDebt = totalOwed;
+            whoPays = member[@"first_name"];
+        }
+    }
+    [self setTitle:whoPays];
 }
 
 #pragma mark - Table view data source
@@ -64,9 +93,26 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Member Cell" forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = @"test";
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", self.group[@"members"][indexPath.row][@"first_name"], self.group[@"members"][indexPath.row][@"last_name"]];
+    NSString *memberIndex = [NSString stringWithFormat:@"%ld", indexPath.row];
+    if ([self.selectedMembers[memberIndex] isEqualToNumber:@YES]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *memberIndex = [NSString stringWithFormat:@"%ld", indexPath.row];
+    if (self.selectedMembers[memberIndex]) {
+        [self.selectedMembers removeObjectForKey:memberIndex];
+    } else {
+        self.selectedMembers[memberIndex] = @YES;
+    }
+    [self calculateWhoOwes];
+    [self.tableView reloadData];
 }
 
 

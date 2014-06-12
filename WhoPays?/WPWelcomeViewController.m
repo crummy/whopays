@@ -52,6 +52,14 @@
     }
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue destinationViewController] isKindOfClass:[WPGroupsViewController class]]) {
+        WPGroupsViewController *groupsVC = (WPGroupsViewController *)[segue destinationViewController];
+        groupsVC.token = self.accessToken;
+        groupsVC.consumer = self.consumer;
+    }
+}
+
 
 /*- (void)testAPIConnection {
     NSURL *testURL = [NSURL URLWithString:@"https://secure.splitwise.com/api/v3.0/test"];
