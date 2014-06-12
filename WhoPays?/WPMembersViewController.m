@@ -81,7 +81,7 @@
 {
     // Return the number of rows in the section.
     if (self.group) {
-        return [self.group count];
+        return [self.group[@"members"] count];
     } else {
         return 0;
     }
@@ -90,6 +90,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"row %d of %d", indexPath.row, [self.group[@"members"] count]);
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Member Cell" forIndexPath:indexPath];
     
     // Configure the cell...

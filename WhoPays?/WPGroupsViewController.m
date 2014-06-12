@@ -125,7 +125,9 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     WPMembersViewController *membersVC = (WPMembersViewController *)[segue destinationViewController];
-    membersVC.group = self.groups[1];
+    int groupIndex = [self.tableView indexPathForSelectedRow].row + 1;
+    NSLog(@"groupIndex: %d", groupIndex);
+    membersVC.group = self.groups[groupIndex];
 }
 
 
