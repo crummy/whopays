@@ -14,8 +14,6 @@
 @interface WPWelcomeViewController ()
 
 @property (strong, nonatomic) IBOutlet UIButton *signInButton;
-@property (strong, nonatomic) OAConsumer *consumer;
-@property (strong, nonatomic) OAToken *accessToken;
 - (IBAction)signInButtonPressed:(UIButton *)sender;
 
 @end
@@ -37,6 +35,11 @@
 	// Do any additional setup after loading the view.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.signInButton setTitle:@"Sign In With Splitwise" forState:UIControlStateNormal];
+    [self.signInButton setEnabled:YES];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -44,6 +47,8 @@
 }
 
 - (IBAction)signInButtonPressed:(UIButton *)sender {
+    [self.signInButton setTitle:@"Signing in..." forState:UIControlStateNormal];
+    [self.signInButton setEnabled:NO];
     self.accessToken = [[OAToken alloc] initWithUserDefaultsUsingServiceProviderName:@"WhoPays" prefix:@"WP"];
     if (!self.accessToken) {
         [self getUnauthorizedRequestToken];

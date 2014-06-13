@@ -35,6 +35,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)closeButtonPressed:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - Webview delegate
 
 // from https://github.com/anoopr/core-data-talk/blob/master/example/Classes/FoursquareAuthViewController.m

@@ -8,8 +8,9 @@
 
 #import "WPGroupsViewController.h"
 #import "WPMembersViewController.h"
+#import "WPWelcomeViewController.h"
 
-@interface WPGroupsViewController ()
+@interface WPGroupsViewController () <UIAlertViewDelegate>
 
 @property (strong, nonatomic) NSArray *groups;
 
@@ -43,6 +44,24 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Handle sign out button + delegates
+
+- (IBAction)signOutButtonPressed:(UIBarButtonItem *)sender {
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Sign Out"
+                          message:@"Are you sure you want to sign out?"
+                          delegate:self
+                          cancelButtonTitle:@"Cancel"
+                          otherButtonTitles:@"Sign Out", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        [self performSegueWithIdentifier:@"signOutSegue" sender:self];
+    }
 }
 
 #pragma mark - Table view data source
@@ -122,12 +141,17 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    WPMembersViewController *membersVC = (WPMembersViewController *)[segue destinationViewController];
-    int groupIndex = [self.tableView indexPathForSelectedRow].row + 1;
-    NSLog(@"groupIndex: %d", groupIndex);
-    membersVC.group = self.groups[groupIndex];
+    if ([[segue identifier] isEqualToString:@"toMembersSegue"]) {
+        WPMembersViewController *membersVC = (WPMembersViewController *)[segue destinationViewController];
+        int groupIndex = [self.tableView indexPathForSelectedRow].row + 1;
+        NSLog(@"groupIndex: %d", groupIndex);
+        membersVC.group = self.groups[groupIndex];
+    } else if ([[segue identifier] isEqualToString:@"signOutSegue"]) {
+        WPWelcomeViewController *welcomeVC = (WPWelcomeViewController *)[segue destinationViewController];
+        [OAToken removeFromUserDefaultsWithServiceProviderName:@"WhoPays" prefix:@"WP"];
+        welcomeVC.accessToken = nil;
+        welcomeVC.consumer = nil;
+    }
 }
 
 

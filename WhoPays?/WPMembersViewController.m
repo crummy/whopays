@@ -95,7 +95,7 @@
     
     // Configure the cell...
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", self.group[@"members"][indexPath.row][@"first_name"], self.group[@"members"][indexPath.row][@"last_name"]];
-    NSString *memberIndex = [NSString stringWithFormat:@"%ld", indexPath.row];
+    NSString *memberIndex = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
     if ([self.selectedMembers[memberIndex] isEqualToNumber:@YES]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
@@ -106,7 +106,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *memberIndex = [NSString stringWithFormat:@"%ld", indexPath.row];
+    NSString *memberIndex = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
     if (self.selectedMembers[memberIndex]) {
         [self.selectedMembers removeObjectForKey:memberIndex];
     } else {
